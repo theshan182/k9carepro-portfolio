@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://www.transparenttextures.com/patterns/paws.png');
+  background-color: #f5f0e1;
+}
