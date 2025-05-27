@@ -1,15 +1,15 @@
 {
-  "homepage": "http://K9CarrProPortfolio.github.io/k9carepro-portfolio",
+  "homepage": "http://theshan182.github.io/k9carepro-portfolio",
   "name": "k9carepro-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.88.6",
