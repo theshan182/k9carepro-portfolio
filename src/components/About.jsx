@@ -1,38 +1,50 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react"
+
+import { motion } from "framer-motion"
+
+import kasunImg from "../images/Kasun.jpg"
+import nillaImg from "../images/Nilusha.jpg"
+import ghazi from "../images/Ghazi.jpg"
+import m from "../images/M.png"
 
 const teamMembers = [
   {
-    name: 'KARUNARATHNE K.J',
-    id: 'IT21256646',
-    image: '/src/images/Ghazi.jpg',
-    role: 'Group Member',
+    name: "KARUNARATHNE K.J",
+    id: "IT21256646",
+    image: kasunImg,
+    role: "Group Member",
   },
   {
-    name: 'ISMAIL M.A.U',
-    id: 'IT21233630',
-    image: '/src/images/Kasun.jpg',
-    role: 'Group Member',
+    name: "ISMAIL M.A.U",
+    id: "IT21233630",
+    image: ghazi,
+    role: "Group Member",
   },
   {
-    name: 'WIJERATHNE R.V.A.N.S',
-    id: 'IT21264184',
-    image: '/src/images/Nilusha.jpg', 
-    role: 'Group Member',
+    name: "WIJERATHNE R.V.A.N.S",
+    id: "IT21264184",
+    image: nillaImg,
+    role: "Group Member",
   },
-];
+]
 
 const supervisor = {
-  name: 'Ms. Manori Gamage',
-  role: 'Supervisor',
-  image: '/src/images/M.png',
-};
+  name: "Ms. Manori Gamage",
+  role: "Supervisor",
+  image: m,
+}
 
 export default function About() {
-  const allMembers = [...teamMembers, { ...supervisor, id: 'Supervisor', isSupervisor: true }];
+  const allMembers = [
+    ...teamMembers,
+    { ...supervisor, id: "Supervisor", isSupervisor: true },
+  ]
 
   return (
-    <section id="about" className="py-20 px-6 sm:px-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <section
+      id="about"
+      className="py-20 px-6 sm:px-12 bg-gradient-to-br from-blue-50 via-white to-blue-100"
+    >
       <div className="text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -49,7 +61,9 @@ export default function About() {
           transition={{ duration: 1, delay: 0.2 }}
           className="mt-4 max-w-3xl mx-auto text-blue-800 text-lg"
         >
-          K9CarePro is developed by a dedicated team under the supervision of <strong>{supervisor.name}</strong>. Our mission is to revolutionize canine care using advanced AI and IoT technologies.
+          K9CarePro is developed by a dedicated team under the supervision of{" "}
+          <strong>{supervisor.name}</strong>. Our mission is to revolutionize
+          canine care using advanced AI and IoT technologies.
         </motion.p>
       </div>
 
@@ -76,13 +90,17 @@ export default function About() {
               )}
             </div>
             <div className="p-5 text-center bg-gradient-to-t from-blue-50 to-white rounded-b-3xl">
-              <h3 className="text-xl font-semibold text-blue-900">{member.name}</h3>
-              {!member.isSupervisor && <p className="text-blue-600 mt-1">{member.id}</p>}
+              <h3 className="text-xl font-semibold text-blue-900">
+                {member.name}
+              </h3>
+              {!member.isSupervisor && (
+                <p className="text-blue-600 mt-1">{member.id}</p>
+              )}
               <p className="mt-2 text-blue-700 font-medium">{member.role}</p>
             </div>
           </motion.div>
         ))}
       </div>
     </section>
-  );
+  )
 }

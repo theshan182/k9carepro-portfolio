@@ -1,37 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react"
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     // Trigger animation on mount
-    setIsVisible(true);
-  }, []);
+    setIsVisible(true)
+  }, [])
 
   // Close mobile menu on link click
   const handleLinkClick = () => {
-    setMobileOpen(false);
-  };
+    setMobileOpen(false)
+  }
 
   const menuItems = [
-    'Home',
-    'About',
-    'Research',
-    'Features',
-    'Implementation',
-    'Technology',
-    'Gallery',
-    'Contact',
-  ];
+    "Home",
+    "About",
+    "Research",
+    "Features",
+    "Implementation",
+    "Technology",
+    "Milestones",
+    "Gallery",
+    "Contact",
+  ]
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-transform duration-1000 ease-out backdrop-blur-xl bg-white/30 shadow-lg ${
-        isVisible ? 'translate-y-0' : '-translate-y-20'
+        isVisible ? "translate-y-0" : "-translate-y-20"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-8xl mx-auto px-6 py-5 flex items-center justify-between">
         {/* Logo or Brand */}
         <a href="#home" className="text-2xl font-bold text-blue-700">
           K9CarePro
@@ -89,7 +90,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white/90 backdrop-blur-md border-t border-blue-200 transition-max-height duration-500 overflow-hidden ${
-          mobileOpen ? 'max-h-screen' : 'max-h-0'
+          mobileOpen ? "max-h-screen" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col items-center space-y-6 py-6">
@@ -107,5 +108,5 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>
-  );
+  )
 }
